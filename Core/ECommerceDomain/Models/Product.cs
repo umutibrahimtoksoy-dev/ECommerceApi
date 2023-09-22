@@ -7,5 +7,7 @@ namespace ECommerceDomain.Models
         public string Name { get; set; }
         public int Quantity { get; set; }
         public long Price { get; set; }
+
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

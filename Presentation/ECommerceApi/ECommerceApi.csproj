@@ -12,6 +12,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\ECommerceApplication\ECommerceApplication.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\ECommercePersistence\ECommercePersistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>
