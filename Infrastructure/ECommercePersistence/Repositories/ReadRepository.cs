@@ -14,25 +14,49 @@ namespace ECommercePersistence.Repositories
         {
             _eCommerceDbContext = eCommerceDbContext;
         }
+
         public DbSet<T> Table => _eCommerceDbContext.Set<T>();
 
-        public IQueryable<T> GetAll()
+        public IQueryable<T> GetAll(bool isTracking)
         {
+            if (!isTracking)
+            {
+                return Table
+                    .AsNoTracking();
+            }
             return Table;
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<T> GetById(int id, bool isTracking)
         {
+            if (!isTracking)
+            {
+                return await Table
+                    .AsNoTracking()
+                    .FirstOrDefaultAsync(f => f.Id == id);
+            }
             return await Table.FindAsync(id);
         }
 
-        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method)
-        {          
-           return await Table.SingleOrDefaultAsync(method);
+        public async Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool isTracking)
+        {
+            if (!isTracking)
+            {
+                return await Table
+                    .AsNoTracking()
+                    .SingleOrDefaultAsync(method);
+            }
+            return await Table.SingleOrDefaultAsync(method);
         }
 
-        public IQueryable<T> Where(Expression<Func<T, bool>> method)
+        public IQueryable<T> Where(Expression<Func<T, bool>> method, bool isTracking)
         {
+            if (!isTracking)
+            {
+                return Table
+                    .AsNoTracking()
+                    .Where(method);
+            }
             return Table.Where(method);
         }
     }

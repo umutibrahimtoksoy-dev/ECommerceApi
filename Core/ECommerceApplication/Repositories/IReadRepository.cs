@@ -5,9 +5,9 @@ namespace ECommerceApplication.Repositories
 {
     public interface IReadRepository<T> : IRepository<T> where T : BaseEntity
     {
-        IQueryable<T> GetAll();
-        IQueryable<T> Where(Expression<Func<T, bool>> method);
-        Task<T> GetSingleAsync(Expression<Func<T, bool>> method);
-        Task<T> GetById(int id);
+        IQueryable<T> GetAll(bool isTracking);
+        IQueryable<T> Where(Expression<Func<T, bool>> method, bool isTracking);
+        Task<T> GetSingleAsync(Expression<Func<T, bool>> method, bool isTracking);
+        Task<T> GetById(int id, bool isTracking);
     }
 }

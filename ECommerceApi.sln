@@ -5,19 +5,24 @@ VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{CD140CDB-2ECD-4938-84BF-A9CFAF92DE24}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceDomain", "Core\ECommerceDomain\ECommerceDomain.csproj", "{42ECB344-BCDA-4917-A0D7-C68A4F36339C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerceDomain", "Core\ECommerceDomain\ECommerceDomain.csproj", "{42ECB344-BCDA-4917-A0D7-C68A4F36339C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceApplication", "Core\ECommerceApplication\ECommerceApplication.csproj", "{B2148C29-1FFB-4559-AFE5-A3CDE90898EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerceApplication", "Core\ECommerceApplication\ECommerceApplication.csproj", "{B2148C29-1FFB-4559-AFE5-A3CDE90898EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{CC0FA94E-800E-40C1-BBA1-F69D5FCF3709}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceInfrastructure", "Infrastructure\ECommerceInfrastructure\ECommerceInfrastructure.csproj", "{B1991460-A483-4B7E-B2EE-AC52C99C1EF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerceInfrastructure", "Infrastructure\ECommerceInfrastructure\ECommerceInfrastructure.csproj", "{B1991460-A483-4B7E-B2EE-AC52C99C1EF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommercePersistence", "Infrastructure\ECommercePersistence\ECommercePersistence.csproj", "{4B4BE689-4CF6-4A20-A3BF-C17F70CE20D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommercePersistence", "Infrastructure\ECommercePersistence\ECommercePersistence.csproj", "{4B4BE689-4CF6-4A20-A3BF-C17F70CE20D2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{FF9027B6-C5D6-40AF-81C4-FFEBFFA4AB7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerceApi", "Presentation\ECommerceApi\ECommerceApi.csproj", "{7A320C64-85EA-453F-843E-2ADCC643944E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerceApi", "Presentation\ECommerceApi\ECommerceApi.csproj", "{7A320C64-85EA-453F-843E-2ADCC643944E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{802DB447-88BD-41A1-8347-DFF984F54885}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
