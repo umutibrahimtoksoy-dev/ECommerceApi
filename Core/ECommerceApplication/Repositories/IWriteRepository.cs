@@ -6,7 +6,7 @@ namespace ECommerceApplication.Repositories
     {
         Task<int> AddAsync(T entity);
         Task<bool> AddRangeAsync(List<T> entity);
-        Task<int> UpdateAsync(T entity);
+        int Update(T entity);
         bool Remove(T entity);
         bool RemoveRange(List<T> entity);
         Task<bool> Remove(int id);

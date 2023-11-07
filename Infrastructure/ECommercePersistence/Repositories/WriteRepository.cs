@@ -29,10 +29,11 @@ namespace ECommercePersistence.Repositories
             return true;
         }
 
-        public async Task<int> UpdateAsync(T entity)
+        public int Update(T entity)
         {
+            Table.Update(entity);
 
-            throw new NotImplementedException();
+            return entity.Id;
         }
 
         public bool Remove(T entity)
