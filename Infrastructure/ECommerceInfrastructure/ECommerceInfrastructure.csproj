@@ -10,4 +10,8 @@
     <ProjectReference Include="..\..\Core\ECommerceApplication\ECommerceApplication.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="RedisExtension" Version="1.0.1" />
+  </ItemGroup>
+
 </Project>

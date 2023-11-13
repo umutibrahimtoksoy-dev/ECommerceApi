@@ -1,3 +1,4 @@
+using ECommerceInfrastructure;
 using ECommercePersistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddPersistenceServices();
+builder.Services.AddInfrastructureServices();
+
 
 var app = builder.Build();
 

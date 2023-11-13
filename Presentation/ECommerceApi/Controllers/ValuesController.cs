@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ECommerceApplication.Services;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,6 +9,13 @@ namespace ECommerceApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private readonly IRedisService _redisService;
+
+        public ValuesController(IRedisService redisService)
+        {
+            _redisService = redisService;
+        }
+
         // GET: api/<ValuesController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -16,16 +24,17 @@ namespace ECommerceApi.Controllers
         }
 
         // GET api/<ValuesController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{key}")]
+        public async Task<string> Get(string key)
         {
-            return "value";
+           return await _redisService.GetProduct(key);
         }
 
         // POST api/<ValuesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task Post([FromBody] string value)
         {
+            await _redisService.SetProduct("product", value);            
         }
 
         // PUT api/<ValuesController>/5
