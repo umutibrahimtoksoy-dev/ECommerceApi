@@ -1,5 +1,5 @@
 ﻿using ECommerceApplication.Repositories;
-using ECommerceDomain.Models.Common;
+using ECommerceDomain.Entities.Common;
 using ECommercePersistence.Contexts;
 using Microsoft.EntityFrameworkCore;
 

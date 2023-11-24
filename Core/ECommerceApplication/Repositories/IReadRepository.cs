@@ -1,4 +1,4 @@
-﻿using ECommerceDomain.Models.Common;
+﻿using ECommerceDomain.Entities.Common;
 using System.Linq.Expressions;
 
 namespace ECommerceApplication.Repositories

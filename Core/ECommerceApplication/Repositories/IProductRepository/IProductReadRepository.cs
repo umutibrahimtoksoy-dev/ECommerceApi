@@ -1,4 +1,4 @@
-﻿using ECommerceDomain.Models;
+﻿using ECommerceDomain.Entities;
 
 namespace ECommerceApplication.Repositories.IProductRepository
 {

@@ -1,5 +1,5 @@
-﻿using ECommerceDomain.Models;
-using ECommerceDomain.Models.Common;
+﻿using ECommerceDomain.Entities;
+using ECommerceDomain.Entities.Common;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 

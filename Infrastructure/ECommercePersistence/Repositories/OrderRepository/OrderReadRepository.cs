@@ -1,5 +1,5 @@
 ﻿using ECommerceApplication.Repositories.IOrderRepository;
-using ECommerceDomain.Models;
+using ECommerceDomain.Entities;
 using ECommercePersistence.Contexts;
 
 namespace ECommercePersistence.Repositories.OrderRepository

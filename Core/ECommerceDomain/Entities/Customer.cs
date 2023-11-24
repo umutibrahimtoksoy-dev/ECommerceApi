@@ -1,6 +1,6 @@
-﻿using ECommerceDomain.Models.Common;
+﻿using ECommerceDomain.Entities.Common;
 
-namespace ECommerceDomain.Models
+namespace ECommerceDomain.Entities
 {
     public class Customer : BaseEntity
     {

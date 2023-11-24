@@ -1,7 +1,7 @@
-﻿using ECommerceDomain.Models.Common;
+﻿using ECommerceDomain.Entities.Common;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ECommerceDomain.Models
+namespace ECommerceDomain.Entities
 {
     public class Order : BaseEntity
     {
