@@ -9,7 +9,7 @@ namespace ECommerceApplication.Repositories
         int Update(T entity);
         bool Remove(T entity);
         bool RemoveRange(List<T> entity);
-        Task<bool> Remove(int id);
+        Task<bool> RemoveAsync(int id);
         Task<int> SaveChangesAsync();
     }
 }
