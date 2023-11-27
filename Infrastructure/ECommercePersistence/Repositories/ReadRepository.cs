@@ -17,6 +17,17 @@ namespace ECommercePersistence.Repositories
 
         public DbSet<T> Table => _eCommerceDbContext.Set<T>();
 
+        public async Task<List<T>> GetListAsync(bool isTracking)
+        {
+            if (!isTracking)
+            {
+                return await Table
+                    .AsNoTracking()
+                    .ToListAsync();
+            }
+            return await Table.ToListAsync();
+        }
+
         public IQueryable<T> GetAll(bool isTracking)
         {
             if (!isTracking)
@@ -27,7 +38,7 @@ namespace ECommercePersistence.Repositories
             return Table;
         }
 
-        public async Task<T> GetById(int id, bool isTracking)
+        public async Task<T> GetByIdAsync(int id, bool isTracking)
         {
             if (!isTracking)
             {
