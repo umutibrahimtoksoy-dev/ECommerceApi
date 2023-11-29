@@ -13,5 +13,6 @@ namespace ECommerceDomain.Entities
 
         [ForeignKey("CustomerId")]
         public virtual Customer Customer { get; set; }
+        public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }
 }

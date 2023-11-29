@@ -8,6 +8,8 @@ namespace ECommerceDomain.Entities
         public int Quantity { get; set; }
         public float Price { get; set; }
 
+
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> OrderProduct { get; set; }
     }
 }
