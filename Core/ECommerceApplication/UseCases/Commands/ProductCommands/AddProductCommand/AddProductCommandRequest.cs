@@ -7,5 +7,7 @@ namespace ECommerceApplication.UseCases.Commands.ProductCommands.AddProductComma
         public string Name { get; set; }
         public int Quantity { get; set; }
         public float Price { get; set; }
+        public string CurrencyCode { get; set; }
+        public bool IsActive { get; set; }
     }
 }
