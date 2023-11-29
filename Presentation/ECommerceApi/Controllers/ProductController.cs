@@ -26,10 +26,10 @@ namespace ECommerceApi.Controllers
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
-        public async Task<int> AddProduct([FromBody] AddProductCommandRequest request)
+        public async Task<IActionResult> AddProduct([FromBody] AddProductCommandRequest request)
         {
             var result = await _mediator.Send(request);
-            return result;
+            return Ok(result);
         }
 
         /// <summary>
@@ -39,10 +39,10 @@ namespace ECommerceApi.Controllers
         /// <returns></returns>
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(bool))]
-        public async Task<bool> RemoveProduct([FromRoute] int id)
+        public async Task<IActionResult> RemoveProduct([FromRoute] int id)
         {
             var result = await _mediator.Send(new RemoveProductCommandRequest(id));
-            return result;
+            return Ok(result);
         }
 
         /// <summary>
@@ -52,10 +52,11 @@ namespace ECommerceApi.Controllers
         /// <returns></returns>
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
-        public async Task<int> UpdateProduct([FromBody] UpdateProductCommandRequest request)
+        public async Task<IActionResult> UpdateProduct([FromBody] UpdateProductCommandRequest request)
         {
             var result = await _mediator.Send(request);
-            return result;
+
+            return Ok(result);
         }
 
         /// <summary>
@@ -65,23 +66,23 @@ namespace ECommerceApi.Controllers
         /// <returns></returns>
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ProductGetByIdQueryResponse))]
-        public async Task<ProductGetByIdQueryResponse> GetByProductId([FromRoute] int id)
+        public async Task<IActionResult> GetByProductId([FromRoute] int id)
         {
             var result = await _mediator.Send(new ProductGetByIdQueryRequest(id));
-            return result;
+            return Ok(result);
         }
 
         /// <summary>
-        /// Get the All Product entity
+        /// Get the all Product entity
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<ProductGetAllQueryResponse>))]
-        public async Task<List<ProductGetAllQueryResponse>> GetAll()
+        public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new ProductGetAllQueryRequest());
-            return result;
+            return Ok(result);
         }
     }
 }

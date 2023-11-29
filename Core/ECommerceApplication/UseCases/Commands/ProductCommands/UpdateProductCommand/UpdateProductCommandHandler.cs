@@ -8,21 +8,26 @@ namespace ECommerceApplication.UseCases.Commands.ProductCommands.UpdateProductCo
     public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest, int>
     {
         private readonly IProductWriteRepository _productWriteRepository;
+        private readonly IProductReadRepository _productReadRepository;
         private readonly IMapper _mapper;
 
         public UpdateProductCommandHandler(IProductWriteRepository productWriteRepository,
+            IProductReadRepository productReadRepository,
             IMapper mapper)
         {
             _productWriteRepository = productWriteRepository;
+            _productReadRepository = productReadRepository;
             _mapper = mapper;
         }
 
 
         public async Task<int> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
         {
-            Product product = _mapper.Map<Product>(request);
+            Product product = await _productReadRepository.GetByIdAsync(request.Id);
 
-            _productWriteRepository.Update(product);
+            Product updatedProduct = _mapper.Map<Product>(request);
+
+            _productWriteRepository.Update(updatedProduct);
 
             await _productWriteRepository.SaveChangesAsync();
 
